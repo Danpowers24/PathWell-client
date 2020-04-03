@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>PathWell</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,72 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>PathWell</h1>
+      <form id="sign-up" class="border">
+        <fieldset>
+          <legend>Sign up</legend>
+            <input type="text" name="credentials[email]" placeholder="your@email.com">
+            <input type="password" name="credentials[password]" placeholder="Type Password Here">
+            <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+            <input type="submit" value="Sign up">
+        </fieldset>
+      </form>
+
+      <form id="sign-in" class="border">
+        <fieldset>
+          <legend>Sign in</legend>
+            <input type="text" name="credentials[email]" placeholder="your@email.com">
+            <input type="password" name="credentials[password]" placeholder="Type Password Here">
+            <input type="submit" value="Sign in">
+        </fieldset>
+      </form>
+
+      <form id="sign-out" class="border">
+        <fieldset>
+          <legend>Sign out</legend>
+            <input type="submit" value="sign out">
+        </fieldset>
+      </form>
+
+      <form id="change-password" class="border">
+        <fieldset>
+          <legend>Change password</legend>
+            <input type="password" name="passwords[old]" placeholder="old password">
+            <input type="password" name="passwords[new]" placeholder="new password">
+            <input type="submit" value="change password">
+        </fieldset>
+      </form>
+        <div class="game-board-container border">
+          <div id="0" class="box col-4 border" >
+          </div>
+          <div id="1" class="box col-4 border">
+          </div>
+          <div id="2" class="box col-4 border" >
+          </div>
+          <div id="3" class="box col-4 border" >
+          </div>
+          <div id="4" class="box col-4 border" >
+          </div>
+          <div id="5" class="box col-4 border" >
+          </div>
+          <div id="6" class="box col-4 border" >
+          </div>
+          <div id="7" class="box col-4 border" >
+          </div>
+          <div id="8" class="box col-4 border" >
+          </div>
+        </div>
+        <form id="new-game" class="border">
+          <fieldset>
+              <input type="submit" value="New Game">
+          </fieldset>
+        </form>
+      <p id="message"></p>
+      <form id="show-games" class="border">
+        <fieldset>
+          <legend>Show all games</legend>
+            <input type="submit" value="show all games">
+        </fieldset>
+      </form>
     </body>
 </html>
