@@ -1,5 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Pacifico&display=swap');
 
 .game-board-container {
   display: flex;
@@ -36,8 +37,20 @@
 
 h1 {
   text-align: center;
-  color: rgba(0, 184, 34, .8);
+}
+
+.logo-1 {
+  color: #8c8c8c;
+  font-family: 'Baloo 2', cursive;
+  font-size: 75px;
+  font-weight: 600;
+}
+
+.logo-2 {
+  color: #55e0ff;
+  font-family: 'Pacifico', cursive;
   font-size: 60px;
+  font-weight: 300;
 }
 
 body {
