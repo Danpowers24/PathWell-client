@@ -34,7 +34,7 @@ const signInSuccess = function (data) {
   $('#message').text('Signed in successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
-  // console.log('signInSuccess data is: ', data)
+  console.log('signInSuccess data is: ', data)
   store.user = data.user
   // console.log(store.user)
   $('#sign-up').addClass('hidden')
