@@ -99,23 +99,17 @@ const signOutFailure = function (error) {
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
 }
-// not sure if these are necessary
-const udpateGameSuccess = function (data) {
-  // console.log('in ui.js: updateGame function has run, success!')
-}
 
-const udpateGameFailure = function (error) {
-  // console.log('in ui.js: updateGame function has failed, this is the error: ', error)
-}
 
 const newDaySuccess = function (data) {
-  // console.log('newDaySuccess was called and ran')
-  store.game = data.game
+  $('#message').text('Thanks for your entry! You are on your way to feeling better.')
+  console.log('newDaySuccess was called and ran')
+  // console.log(api.newDay.data)
   // console.log('newDaySuccess says that there have been ', store.game.id, ' total new games started. ')
 }
 
 const newDayFailure = function (error) {
-  // console.log('newDayFailure was called and ran, this is the error: ', error)
+  console.log('newDayFailure was called and ran, this is the error: ', error)
 }
 
 const showGamesSuccess = function (store) {

@@ -90,12 +90,14 @@ const onNewDay = function (event) {
   event.preventDefault()
   // clear the game board
   $('#message').text('')
+  // get user input
+  const data = getFormFields(event.target)
   // call the newGame function in api.js
-  api.newDay()
+  api.newDay(data)
   // if the call is successful,
-    .then(ui.newGameSuccess)
+    .then(ui.newDaySuccess)
     // if not,
-    .catch(ui.newGameFailure)
+    .catch(ui.newDayFailure)
 }
 
 module.exports = {
