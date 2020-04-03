@@ -35,7 +35,7 @@
 
       <form id="sign-out" class="border">
         <fieldset>
-          <legend>Sign out</legend>
+          <legend></legend>
             <input type="submit" value="sign out">
         </fieldset>
       </form>
@@ -48,36 +48,23 @@
             <input type="submit" value="change password">
         </fieldset>
       </form>
-        <div class="game-board-container border">
-          <div id="0" class="box col-4 border" >
-          </div>
-          <div id="1" class="box col-4 border">
-          </div>
-          <div id="2" class="box col-4 border" >
-          </div>
-          <div id="3" class="box col-4 border" >
-          </div>
-          <div id="4" class="box col-4 border" >
-          </div>
-          <div id="5" class="box col-4 border" >
-          </div>
-          <div id="6" class="box col-4 border" >
-          </div>
-          <div id="7" class="box col-4 border" >
-          </div>
-          <div id="8" class="box col-4 border" >
-          </div>
-        </div>
-        <form id="new-day" class="border">
-          <fieldset>
-              <input type="submit" value="New Entry">
-          </fieldset>
-        </form>
-      <p id="message"></p>
+
+    <p id="message"></p>
+
+      <form id="new-day" class="border">
+        <fieldset>
+          <legend class="new-entry-heading">Make a new entry here:</legend>
+            <input type="text" name="passwords[old]" placeholder="Date">
+            <input type="integer" name="passwords[old]" placeholder="Pain on scale of 1-10">
+            <input type="text" name="passwords[new]" placeholder="Notes:">
+            <input type="submit" value="Submit New Entry">
+        </fieldset>
+      </form>
+
       <form id="show-games" class="border">
         <fieldset>
-          <legend>Show all games</legend>
-            <input type="submit" value="show all games">
+          <legend>History</legend>
+            <input type="submit" value="Show History">
         </fieldset>
       </form>
     </body>

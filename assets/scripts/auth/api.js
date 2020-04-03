@@ -47,15 +47,16 @@ const changePassword = function (data) {
   })
 }
 
+// I want this to populate the screen with form fields to fill out date, pain_level, and
 const newDay = function () {
-  // console.log('In api.js: newGame function has been called and ran')
-  return $.ajax({
-    url: config.apiUrl + '/games/',
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
+  console.log('In api.js: newDay function has been called and ran')
+  // return $.ajax({
+  //   // url: config.apiUrl + '/days',
+  //   // method: 'GET',
+  //   // headers: {
+  //   //   Authorization: 'Token token=' + store.user.token
+  //   // }
+  // })
 }
 
 // I should export a lot of this stuff to store.js and then import it here

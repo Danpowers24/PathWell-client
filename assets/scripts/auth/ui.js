@@ -31,7 +31,7 @@ const signUpFailure = function (error) {
 }
 
 const signInSuccess = function (data) {
-  $('#message').text('Signed in successfully')
+  $('#message').text('You are now signed in. Welcome!')
   $('#message').removeClass()
   $('#message').addClass('success')
   console.log('signInSuccess data is: ', data)
