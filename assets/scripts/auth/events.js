@@ -183,7 +183,7 @@ const onMove = function (event) {
   }
 }
 
-const onNewGame = function (event) {
+const onNewDay = function (event) {
   // prevent the page from reloading after button gets clicked
   event.preventDefault()
   // clear the game board
@@ -199,7 +199,7 @@ const onNewGame = function (event) {
   // clear the message
   $('#message').text('')
   // call the newGame function in api.js
-  api.newGame()
+  api.newDay()
   // if the call is successful,
     .then(ui.newGameSuccess)
     // if not,
@@ -212,7 +212,7 @@ module.exports = {
   onChangePassword,
   onSignOut,
   onMove,
-  onNewGame,
+  onNewDay,
   gameState,
   playerTileChoice,
   onUpdateGame,

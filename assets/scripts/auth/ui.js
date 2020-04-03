@@ -6,7 +6,7 @@ $(function () {
   $('#sign-out').addClass('hidden')
   $('#change-password').addClass('hidden')
   $('.game-board-container').addClass('hidden')
-  $('#new-game').addClass('hidden')
+  $('#new-day').addClass('hidden')
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
   $('#show-games').addClass('hidden')
@@ -41,7 +41,7 @@ const signInSuccess = function (data) {
   $('#sign-in').addClass('hidden')
   $('#sign-out').removeClass('hidden')
   $('#change-password').removeClass('hidden')
-  $('#new-game').removeClass('hidden')
+  $('#new-day').removeClass('hidden')
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
   $('#show-games').removeClass('hidden')
@@ -86,7 +86,7 @@ const signOutSuccess = function (data) {
   $('#sign-out').addClass('hidden')
   $('#change-password').addClass('hidden')
   $('.game-board-container').addClass('hidden')
-  $('#new-game').addClass('hidden')
+  $('#new-day').addClass('hidden')
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
 }
@@ -108,14 +108,14 @@ const udpateGameFailure = function (error) {
   // console.log('in ui.js: updateGame function has failed, this is the error: ', error)
 }
 
-const newGameSuccess = function (data) {
-  // console.log('newGameSuccess was called and ran')
+const newDaySuccess = function (data) {
+  // console.log('newDaySuccess was called and ran')
   store.game = data.game
-  // console.log('newGameSuccess says that there have been ', store.game.id, ' total new games started. ')
+  // console.log('newDaySuccess says that there have been ', store.game.id, ' total new games started. ')
 }
 
-const newGameFailure = function (error) {
-  // console.log('newGameFailure was called and ran, this is the error: ', error)
+const newDayFailure = function (error) {
+  // console.log('newDayFailure was called and ran, this is the error: ', error)
 }
 
 const showGamesSuccess = function (store) {
@@ -152,8 +152,8 @@ module.exports = {
   changePasswordFailure,
   signOutSuccess,
   signOutFailure,
-  newGameSuccess,
-  newGameFailure,
+  newDaySuccess,
+  newDayFailure,
   showGamesFailure,
   showGamesSuccess
   // updateGameSuccess,

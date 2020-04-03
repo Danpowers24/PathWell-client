@@ -47,7 +47,7 @@ const changePassword = function (data) {
   })
 }
 
-const newGame = function () {
+const newDay = function () {
   // console.log('In api.js: newGame function has been called and ran')
   return $.ajax({
     url: config.apiUrl + '/games/',
@@ -88,6 +88,6 @@ module.exports = {
   changePassword,
   signOut,
   updateGame,
-  newGame,
+  newDay,
   showGame
 }
