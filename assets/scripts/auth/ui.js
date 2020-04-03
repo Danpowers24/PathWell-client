@@ -9,7 +9,7 @@ $(function () {
   $('#new-day').addClass('hidden')
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
-  $('#show-games').addClass('hidden')
+  $('#show-days').addClass('hidden')
 })
 
 const signUpSuccess = function (data) {
@@ -44,7 +44,7 @@ const signInSuccess = function (data) {
   $('#new-day').removeClass('hidden')
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
-  $('#show-games').removeClass('hidden')
+  $('#show-days').removeClass('hidden')
 }
 
 // store.game = data.game
@@ -104,6 +104,8 @@ const signOutFailure = function (error) {
 const newDaySuccess = function (data) {
   $('#message').text('Thanks for your entry! You are on your way to feeling better.')
   console.log('newDaySuccess was called and ran')
+  $('form input[type="text"]').val('')
+  $('form input[type="integer"]').val('')
   // console.log(api.newDay.data)
   // console.log('newDaySuccess says that there have been ', store.game.id, ' total new games started. ')
 }
@@ -112,19 +114,21 @@ const newDayFailure = function (error) {
   console.log('newDayFailure was called and ran, this is the error: ', error)
 }
 
-const showGamesSuccess = function (store) {
+const showDaysSuccess = function (data) {
   // $('#message').removeClass()
   $('#message').addClass('success')
   // console.log('showGamesSuccess: This is the id and email of the user currently logged in nothing ')
-  // console.log(store.games)
-  $('#message').text('You have started ' + store.games.length + ' total games.')
+  console.log('in ui.js: showDaysSuccess has been called and ran')
+  console.log('data is ', data)
+  // figure out how to display every day object (entry)
+  $('#history-message').text(data)
 }
 
-const showGamesFailure = function (error) {
-  $('#message').text('Something went wrong when trying to see how many games you have played')
+const showDaysFailure = function (error) {
+  $('#message').text('Something went wrong when trying to see your history')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.log('showGamesFailure data is: ', error)
+  console.log('showDaysFailure data is: ', error)
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
 }
@@ -148,8 +152,8 @@ module.exports = {
   signOutFailure,
   newDaySuccess,
   newDayFailure,
-  showGamesFailure,
-  showGamesSuccess
+  showDaysFailure,
+  showDaysSuccess
   // updateGameSuccess,
   // updateGameFailure
 }

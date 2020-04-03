@@ -70,18 +70,20 @@ const updateGame = function (data) {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: data
+    data
   })
 }
 
 // this will be show all entries/history
-const showGame = function () {
+const showDays = function (data) {
+  console.log("in api.js: showDays function has been called")
   return $.ajax({
-    url: config.apiUrl + '/games',
+    url: config.apiUrl + '/days',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data
   })
 }
 
@@ -92,5 +94,5 @@ module.exports = {
   signOut,
   updateGame,
   newDay,
-  showGame
+  showDays
 }
