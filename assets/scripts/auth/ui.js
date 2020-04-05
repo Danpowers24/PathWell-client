@@ -114,14 +114,26 @@ const newDayFailure = function (error) {
   console.log('newDayFailure was called and ran, this is the error: ', error)
 }
 
-const showDaysSuccess = function (data) {
+const showDaysSuccess = function (store) {
   // $('#message').removeClass()
   $('#message').addClass('success')
   // console.log('showGamesSuccess: This is the id and email of the user currently logged in nothing ')
   console.log('in ui.js: showDaysSuccess has been called and ran')
-  console.log('data is ', data)
+  console.log('data is ', store.days)
   // figure out how to display every day object (entry)
-  $('#history-message').text(data)
+  $('#history-message').text('you have made ' + store.days.length + ' entries.')
+  const tbody = document.getElementById('tbody')
+  for (let i = 0; i < store.days.length + 1; i++) {
+    let tr = '<tr>'
+    if (i === 0) {
+      tr += '<td>Date</td>' + '<td>Pain Level</td>' + '<td>Notes</td></tr>'
+      tbody.innerHTML += tr
+    }
+    if (i > 0) {
+      tr += '<td>' + store.days[i].date + '</td>' + '<td>' + store.days[i].pain_level + '</td>' + '<td>' + store.days[i].notes + '</td></tr>'
+      tbody.innerHTML += tr
+    }
+  }
 }
 
 const showDaysFailure = function (error) {
