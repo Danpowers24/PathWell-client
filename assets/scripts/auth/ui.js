@@ -21,6 +21,7 @@ const signUpSuccess = function (data) {
   $('form input[type="password"]').val('')
 }
 
+// do I need to pass error here?
 const signUpFailure = function (error) {
   $('#message').text('Something went wrong when signing up, please try again.')
   $('#message').removeClass()
@@ -97,7 +98,7 @@ const signOutFailure = function (error) {
   $('#message').text('You are not signed out yet! Something went wrong.')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  // console.log('signOutFailure data is: ', error)
+  console.log('signOutFailure data is: ', error)
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
 }

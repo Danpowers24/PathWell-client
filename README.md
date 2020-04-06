@@ -9,11 +9,13 @@ For many people, the experience goes something like this: You wait for long afte
 
 Now imagine the doctor having all the information about your pain issue before you even get to the doctor's office (or not even having to go to the doctor's office at all!).
 
+### How it works ###
+
 PathWell is a simple way for people with chronic pain to document their
 
-## You can **play my game** here: https://danpowers24.github.io/PathWell-client #
+## You can **view PathWell** here: https://danpowers24.github.io/PathWell-client #
 
-### **List of technologies** I used to create this program:
+### **List of technologies** I used to create this application:
 JavaScript\
 HTML\
 CSS\
@@ -25,7 +27,7 @@ GitHub Enterprise\
 Heroku\
 Trello
 
-#### I wanted to make a game that will satisfy some of the following **user stories**:
+#### I wanted to make an application that will satisfy the following **user stories**:
 V1:
 As a user, I would like to sign up with an email and password.\
 As a user, I would like to sign in.\
