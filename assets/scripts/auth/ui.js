@@ -107,7 +107,7 @@ const newDaySuccess = function (data) {
   $('form input[type="text"]').val('')
   $('form input[type="integer"]').val('')
   // console.log(api.newDay.data)
-  // console.log('newDaySuccess says that there have been ', store.game.id, ' total new games started. ')
+  // if the table is on the page, then update it and the history message with the new entry
 }
 
 const newDayFailure = function (error) {
@@ -115,9 +115,10 @@ const newDayFailure = function (error) {
 }
 
 const showDaysSuccess = function (store) {
-  // $('#message').removeClass()
-  $('#message').addClass('success')
-  // console.log('showGamesSuccess: This is the id and email of the user currently logged in nothing ')
+  $('#history-message').val('')
+  // Clear the table before starting new one
+  $('#tbody > tr').remove()
+  // test that this fucntion has been run
   console.log('in ui.js: showDaysSuccess has been called and ran')
   console.log('data is ', store.days)
   // figure out how to display every day object (entry)
