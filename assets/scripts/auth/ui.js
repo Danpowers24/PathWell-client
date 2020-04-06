@@ -13,7 +13,7 @@ $(function () {
 })
 
 const signUpSuccess = function (data) {
-  $('#message').text('Signed up successfully')
+  $('#message').text('You have successfully signed up!')
   $('#message').removeClass()
   $('#message').addClass('success')
   // console.log('signUpSuccess data is: ', data)
@@ -25,7 +25,7 @@ const signUpFailure = function (error) {
   $('#message').text('Something went wrong when signing up, please try again.')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  // console.log('signUpFailure error is: ', error)
+  console.log('signUpFailure error is: ', error)
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
 }
@@ -34,7 +34,7 @@ const signInSuccess = function (data) {
   $('#message').text('You are now signed in. Welcome!')
   $('#message').removeClass()
   $('#message').addClass('success')
-  console.log('signInSuccess data is: ', data)
+  // console.log('signInSuccess data is: ', data)
   store.user = data.user
   // console.log(store.user)
   $('#sign-up').addClass('hidden')
@@ -47,13 +47,12 @@ const signInSuccess = function (data) {
   $('#show-days').removeClass('hidden')
 }
 
-// store.game = data.game
-
+// do I need to pass error here?
 const signInFailure = function (error) {
-  $('#message').text('Invalid credentials, please try again.')
+  $('#message').text('Hm, we had trouble finding that email/password combo. Please try again.')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  // console.log('signInFailure error is: ', error)
+  console.log('signInFailure error is: ', error)
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
 }
@@ -67,17 +66,18 @@ const changePasswordSuccess = function (data) {
   $('form input[type="password"]').val('')
 }
 
+// do I need to pass error here?
 const changePasswordFailure = function (error) {
   $('#message').text('Failed to change password, try again.')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  // console.log('changePasswordFailure error is: ', error)
+  console.log('changePasswordFailure error is: ', error)
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
 }
 
 const signOutSuccess = function (data) {
-  $('#message').text('You have successfully signed out. Thanks for playing!')
+  $('#message').text('You have successfully signed out. Have a great day!')
   $('#message').removeClass()
   $('#message').addClass('success')
   // console.log('signOutSuccess data is: ', data)
@@ -85,7 +85,9 @@ const signOutSuccess = function (data) {
   $('#sign-in').removeClass('hidden')
   $('#sign-out').addClass('hidden')
   $('#change-password').addClass('hidden')
-  $('.game-board-container').addClass('hidden')
+  $('#history-message').addClass('hidden')
+  $('#show-days').addClass('hidden')
+  $('#tbody').addClass('hidden')
   $('#new-day').addClass('hidden')
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
