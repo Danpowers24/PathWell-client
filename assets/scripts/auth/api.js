@@ -76,9 +76,21 @@ const updateGame = function (data) {
 
 // this will be show all entries/history
 const showDays = function (data) {
-  console.log("in api.js: showDays function has been called")
+  console.log('in api.js: showDays function has been called')
   return $.ajax({
     url: config.apiUrl + '/days',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const findDay = function (data) {
+  console.log('in api.js: findDay function has been called, this is the data that it is getting passed: ', data)
+  return $.ajax({
+    url: config.apiUrl + '/days/' + data.day.id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -94,5 +106,6 @@ module.exports = {
   signOut,
   updateGame,
   newDay,
-  showDays
+  showDays,
+  findDay
 }

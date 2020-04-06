@@ -103,7 +103,6 @@ const signOutFailure = function (error) {
   $('form input[type="password"]').val('')
 }
 
-
 const newDaySuccess = function (data) {
   $('#message').text('Thanks for your entry! You are on your way to feeling better.')
   console.log('newDaySuccess was called and ran')
@@ -126,25 +125,46 @@ const showDaysSuccess = function (store) {
   console.log('data is ', store.days)
   // figure out how to display every day object (entry)
   $('#history-message').text('you have made ' + store.days.length + ' entries.')
+  // this should get refactored out and put in events.js
   const tbody = document.getElementById('tbody')
   for (let i = 0; i < store.days.length + 1; i++) {
     let tr = '<tr>'
     if (i === 0) {
-      tr += '<td>Date</td>' + '<td>Pain Level</td>' + '<td>Notes</td></tr>'
+      tr += '<td>ID</td>' + '<td>Date</td>' + '<td>Pain Level</td>' + '<td>Notes</td></tr>'
       tbody.innerHTML += tr
     }
     if (i > 0) {
-      tr += '<td>' + store.days[i].date + '</td>' + '<td>' + store.days[i].pain_level + '</td>' + '<td>' + store.days[i].notes + '</td></tr>'
+      tr += '<td>' + store.days[i].id + '</td>' + '<td>' + store.days[i].date + '</td>' + '<td>' + store.days[i].pain_level + '</td>' + '<td>' + store.days[i].notes + '</td></tr>'
       tbody.innerHTML += tr
     }
   }
 }
+
+// need edit and delete functions. They should be happening in events.js
 
 const showDaysFailure = function (error) {
   $('#message').text('Something went wrong when trying to see your history')
   $('#message').removeClass()
   $('#message').addClass('failure')
   console.log('showDaysFailure data is: ', error)
+  $('form input[type="text"]').val('')
+  $('form input[type="password"]').val('')
+}
+
+// pass something in to this?
+const findDaySuccess = function (returnData) {
+  console.log('findDaySuccess has been called ')
+  $('form input[type="text"]').val('')
+  $('form input[type="password"]').val('')
+  console.log('in findDaySuccess, returnData is: ')
+  console.log('On ' + returnData.day.date + ', you had a pain level of ' + returnData.day.pain_level + ' and you wrote the following note: ' + returnData.day.notes)
+  $('#find-message').text('On ' + returnData.day.date + ', you had a pain level of ' + returnData.day.pain_level + ' and you wrote the following note: ' + returnData.day.notes)
+
+}
+
+const findDayFailure = function () {
+  console.log('findDayFailure has been called')
+  $('#message').text('Something went wrong when trying to find that entry.')
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
 }
@@ -169,7 +189,7 @@ module.exports = {
   newDaySuccess,
   newDayFailure,
   showDaysFailure,
-  showDaysSuccess
-  // updateGameSuccess,
-  // updateGameFailure
+  showDaysSuccess,
+  findDaySuccess,
+  findDayFailure
 }

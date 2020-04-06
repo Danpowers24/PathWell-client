@@ -17,4 +17,5 @@ $(() => {
   $('#new-day').on('submit', authEvents.onNewDay)
   $('#update-game').on('click', authEvents.onUpdateGame)
   $('#show-days').on('submit', authEvents.onShowDays)
+  $('#find-day').on('submit', authEvents.onFindDay)
 })

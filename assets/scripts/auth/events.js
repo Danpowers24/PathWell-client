@@ -57,10 +57,20 @@ const onSignOut = function (event) {
 // go through and look for player id and show games played
 const onShowDays = function (event) {
   event.preventDefault()
-  console.log('In events.js: onShowDays funciton has been called and ran')
+  console.log('In events.js: onShowDays function has been called and ran')
   api.showDays()
     .then(ui.showDaysSuccess)
     .catch(ui.showDaysFailure)
+}
+
+const onFindDay = function (event) {
+  event.preventDefault()
+  console.log('In events.js: onFindDay function has been called and ran')
+  const data = getFormFields(event.target)
+  console.log('in events.js, this is the data: ', data)
+  api.findDay(data)
+    .then(ui.findDaySuccess)
+    .catch(ui.findDayFailure)
 }
 
 // the API wanted the game object in this format
@@ -106,5 +116,6 @@ module.exports = {
   onChangePassword,
   onSignOut,
   onNewDay,
-  onShowDays
+  onShowDays,
+  onFindDay
 }
