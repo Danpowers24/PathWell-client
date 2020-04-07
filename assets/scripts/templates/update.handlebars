@@ -1,0 +1,11 @@
+
+<form class="update-day" class="border" data-id={{day.id}}>
+  <fieldset>
+    <legend class="udpate-entry-heading">Update the above entry here:</legend>
+      <input type="text" name="day[id]" value="{{day.id}}" placeholder="ID (same as original)">
+      <input type="text" name="day[date]" value="{{day.date}}" placeholder="Date">
+      <input type="integer" name="day[pain_level]" value="{{day.pain_level}}" placeholder="Pain on scale of 1-10">
+      <input type="text" name="day[notes]" value="{{day.notes}}" placeholder="Notes:">
+      <input type="submit" value="Update Entry">
+  </fieldset>
+</form>

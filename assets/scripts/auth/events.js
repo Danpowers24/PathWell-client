@@ -95,6 +95,27 @@ const onFindDay = function (event) {
 //     .catch(ui.updateGameFailure)
 // }
 
+// updateDay function ...
+const onUpdateDay = function (event) {
+  event.preventDefault()
+  // const data = store.day
+  const data = getFormFields(event.target)
+  console.log('in events.js, onUpdateDay function ping, data is: ', data)
+  api.updateDay(data)
+    .then(function () {
+      onShowDays(event)
+    },
+    ui.updateWordSuccess)
+    .catch(ui.updateWordFailure)
+}
+
+// const onHideDays = function (event) {
+//   event.preventDefault()
+//   $('.content').addClass('hidden')
+// }
+
+// delete, take the id and then just delete it
+
 const onNewDay = function (event) {
   // prevent the page from reloading after button gets clicked
   event.preventDefault()
@@ -117,5 +138,7 @@ module.exports = {
   onSignOut,
   onNewDay,
   onShowDays,
-  onFindDay
+  onFindDay,
+  onUpdateDay
+  // onHideDays
 }

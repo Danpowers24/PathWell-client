@@ -1,0 +1,24 @@
+{{#each days as |day|}}
+  <section data-id="{{day.id}}" class="show-all">
+    <br>
+    <br>
+    <h6 class='entry'>Entry ID:</h6>
+    <h3 class='entry'>
+      {{ day.id }}
+    </h3>
+    <h6 class='entry'>Date:</h6>
+    <h3 class='entry'>
+      {{ day.date }}
+    </h3>
+    <h6 class='entry'>Pain Level:</h6>
+    <h3 class='entry'>
+      {{ day.pain_level }}
+    </h3>
+    <h6 class='entry'>Notes:</h6>
+    <h3 class='entry'>
+      {{ day.notes }}
+    </h3>
+    {{> update}}
+  </section>
+
+{{/each}}

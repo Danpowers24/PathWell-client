@@ -99,6 +99,19 @@ const findDay = function (data) {
   })
 }
 
+const updateDay = function (data) {
+  // those two lines
+  console.log('in api.js: updateDay function has been called, this is the data that it is getting passed: ', data)
+  return $.ajax({
+    url: config.apiUrl + '/days/' + data.day.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -107,5 +120,6 @@ module.exports = {
   updateGame,
   newDay,
   showDays,
-  findDay
+  findDay,
+  updateDay
 }

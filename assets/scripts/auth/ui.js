@@ -1,6 +1,7 @@
 'use strict'
 
-const store = require(('../store.js'))
+const store = require('../store.js')
+const showDaysTemplate = require('../templates/show-history.handlebars')
 
 $(function () {
   $('#sign-out').addClass('hidden')
@@ -10,6 +11,7 @@ $(function () {
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
   $('#show-days').addClass('hidden')
+  $('#find-day').addClass('hidden')
 })
 
 const signUpSuccess = function (data) {
@@ -46,6 +48,7 @@ const signInSuccess = function (data) {
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
   $('#show-days').removeClass('hidden')
+  $('#find-day').removeClass('hidden')
 }
 
 // do I need to pass error here?
@@ -116,31 +119,43 @@ const newDayFailure = function (error) {
   console.log('newDayFailure was called and ran, this is the error: ', error)
 }
 
-const showDaysSuccess = function (store) {
+// const hideDaySuccess = function () {
+//   $('.content').addClass('hidden')
+// }
+
+const showDaysSuccess = function (data) {
   $('#history-message').val('')
   // Clear the table before starting new one
   $('#tbody > tr').remove()
   // test that this fucntion has been run
   console.log('in ui.js: showDaysSuccess has been called and ran')
-  console.log('data is ', store.days)
+  // console.log('data is ', store.days)
   // figure out how to display every day object (entry)
-  $('#history-message').text('you have made ' + store.days.length + ' entries.')
+  // $('#history-message').text('you have made ' + store.days.length + ' entries.')
   // this should get refactored out and put in events.js
-  const tbody = document.getElementById('tbody')
-  for (let i = 0; i < store.days.length + 1; i++) {
-    let tr = '<tr>'
-    if (i === 0) {
-      tr += '<td>ID</td>' + '<td>Date</td>' + '<td>Pain Level</td>' + '<td>Notes</td></tr>'
-      tbody.innerHTML += tr
-    }
-    if (i > 0) {
-      tr += '<td>' + store.days[i].id + '</td>' + '<td>' + store.days[i].date + '</td>' + '<td>' + store.days[i].pain_level + '</td>' + '<td>' + store.days[i].notes + '</td></tr>'
-      tbody.innerHTML += tr
-    }
-  }
+  // const tbody = document.getElementById('tbody')
+  // for (let i = 0; i < store.days.length + 1; i++) {
+  //   let tr = '<tr>'
+  //   if (i === 0) {
+  //     tr += '<td>ID</td>' + '<td>Date</td>' + '<td>Pain Level</td>' + '<td>Notes</td></tr>'
+  //     tbody.innerHTML += tr
+  //   }
+  //   if (i > 0) {
+  //     tr += '<td>' + store.days[i].id + '</td>' + '<td>' + store.days[i].date + '</td>' + '<td>' + store.days[i].pain_level + '</td>' + '<td>' + store.days[i].notes + '</td></tr>'
+  //     tbody.innerHTML += tr
+  // }
+  // }
+  const showDaysHtml = showDaysTemplate({ days: data.days })
+  // console.log(showDaysHtml)
+  $('.content').html(showDaysHtml)
 }
 
 // need edit and delete functions. They should be happening in events.js
+
+// update
+const updateDaySuccess = function () {
+// add showDaysSuccess so that it refreshes in real time
+}
 
 const showDaysFailure = function (error) {
   $('#message').text('Something went wrong when trying to see your history')
@@ -159,7 +174,6 @@ const findDaySuccess = function (returnData) {
   console.log('in findDaySuccess, returnData is: ')
   console.log('On ' + returnData.day.date + ', you had a pain level of ' + returnData.day.pain_level + ' and you wrote the following note: ' + returnData.day.notes)
   $('#find-message').text('On ' + returnData.day.date + ', you had a pain level of ' + returnData.day.pain_level + ' and you wrote the following note: ' + returnData.day.notes)
-
 }
 
 const findDayFailure = function () {
@@ -168,14 +182,6 @@ const findDayFailure = function () {
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
 }
-
-// remember what I am getting - an array
-// .length
-// when I am making the api call, always double check the documentation
-// (READ) how many games won by a user.
-// I want to start with showing how many games a user has played.
-// in the showgame function, make an ajax request, index, give it the user id
-// return store.games.length
 
 module.exports = {
   signUpSuccess,
@@ -192,4 +198,5 @@ module.exports = {
   showDaysSuccess,
   findDaySuccess,
   findDayFailure
+  // hideDaySuccess
 }

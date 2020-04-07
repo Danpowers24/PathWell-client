@@ -17,5 +17,8 @@ $(() => {
   $('#new-day').on('submit', authEvents.onNewDay)
   $('#update-game').on('click', authEvents.onUpdateGame)
   $('#show-days').on('submit', authEvents.onShowDays)
+  // $('.content').on('submit', '#hide-days', authEvents.onHideDays)
+  // $('.content').on('submit', '.show-all', authEvents.onShowDays)
   $('#find-day').on('submit', authEvents.onFindDay)
+  $('.content').on('submit', '.update-day', authEvents.onUpdateDay)
 })

@@ -2,8 +2,13 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Pacifico&display=swap');
 
-.new-entry-heading {
-    font-size: 50px;
+.update-entry-heading {
+    font-size: 20px;
+    display: inline;
+}
+
+.entry {
+  display: inline;
 }
 
 #new-day {
