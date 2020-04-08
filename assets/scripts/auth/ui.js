@@ -12,6 +12,7 @@ $(function () {
   $('form input[type="password"]').val('')
   $('#show-days').addClass('hidden')
   $('#find-day').addClass('hidden')
+  $('#delete-day').addClass('hidden')
 })
 
 const signUpSuccess = function (data) {
@@ -49,6 +50,7 @@ const signInSuccess = function (data) {
   $('form input[type="password"]').val('')
   $('#show-days').removeClass('hidden')
   $('#find-day').removeClass('hidden')
+  $('#delete-day').removeClass('hidden')
 }
 
 // do I need to pass error here?
@@ -116,6 +118,7 @@ const newDaySuccess = function (data) {
 }
 
 const newDayFailure = function (error) {
+  $('#message').text('There was an error creating a new entry, sorry! Please try again.')
   console.log('newDayFailure was called and ran, this is the error: ', error)
 }
 
@@ -124,6 +127,7 @@ const newDayFailure = function (error) {
 // }
 
 const showDaysSuccess = function (data) {
+  $('#message').text('Take a look at all your entries below!')
   $('#history-message').val('')
   // Clear the table before starting new one
   $('#tbody > tr').remove()
@@ -134,17 +138,7 @@ const showDaysSuccess = function (data) {
   // $('#history-message').text('you have made ' + store.days.length + ' entries.')
   // this should get refactored out and put in events.js
   // const tbody = document.getElementById('tbody')
-  // for (let i = 0; i < store.days.length + 1; i++) {
-  //   let tr = '<tr>'
-  //   if (i === 0) {
-  //     tr += '<td>ID</td>' + '<td>Date</td>' + '<td>Pain Level</td>' + '<td>Notes</td></tr>'
-  //     tbody.innerHTML += tr
-  //   }
-  //   if (i > 0) {
-  //     tr += '<td>' + store.days[i].id + '</td>' + '<td>' + store.days[i].date + '</td>' + '<td>' + store.days[i].pain_level + '</td>' + '<td>' + store.days[i].notes + '</td></tr>'
-  //     tbody.innerHTML += tr
-  // }
-  // }
+
   const showDaysHtml = showDaysTemplate({ days: data.days })
   // console.log(showDaysHtml)
   $('.content').html(showDaysHtml)
@@ -152,9 +146,20 @@ const showDaysSuccess = function (data) {
 
 // need edit and delete functions. They should be happening in events.js
 
+const deleteDaySuccess = function () {
+  console.log('deleteDaySuccess ping')
+  $('message').text('Kiss that entry goodbye!')
+}
+
+const deleteDayFailure = function () {
+  console.log('deleteDaySuccess ping')
+  $('message').text('oops! We were unable to delete that entry. Try again.')
+}
+
 // update
 const updateDaySuccess = function () {
-// add showDaysSuccess so that it refreshes in real time
+  showDaysSuccess()
+  $('#message').text('The entry was successfully updated!')
 }
 
 const showDaysFailure = function (error) {
@@ -197,6 +202,9 @@ module.exports = {
   showDaysFailure,
   showDaysSuccess,
   findDaySuccess,
-  findDayFailure
+  findDayFailure,
+  updateDaySuccess,
+  deleteDaySuccess,
+  deleteDayFailure
   // hideDaySuccess
 }

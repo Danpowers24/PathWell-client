@@ -2,6 +2,15 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Pacifico&display=swap');
 
+.hero-image {
+  background: url('https://i.imgur.com/KkvXV42.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
 .update-entry-heading {
     font-size: 20px;
     display: inline;

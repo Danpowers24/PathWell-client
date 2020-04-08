@@ -66,47 +66,25 @@ const onShowDays = function (event) {
 const onFindDay = function (event) {
   event.preventDefault()
   console.log('In events.js: onFindDay function has been called and ran')
-  const data = getFormFields(event.target)
-  console.log('in events.js, this is the data: ', data)
-  api.findDay(data)
+  const userInput = getFormFields(event.target)
+  console.log('in events.js, this is the data: ', userInput)
+  api.findDay(userInput)
     .then(ui.findDaySuccess)
     .catch(ui.findDayFailure)
 }
-
-// the API wanted the game object in this format
-// const gameObject = {
-//   "game": {
-//     "cell": {
-//       "index": playerTileChoice,
-//       "value": turn
-//     },
-//     "over": gameOver
-//   }
-// }
-
-// this could be a useful template when I want to POST a day
-// const onUpdateGame = function (gameObject) {
-//   event.preventDefault()
-//   // console.log('onUpdateGame called')
-//   api.updateGame()
-//   // if the call is successful,
-//     .then(ui.updateGameSuccess)
-//     // if not,
-//     .catch(ui.updateGameFailure)
-// }
 
 // updateDay function ...
 const onUpdateDay = function (event) {
   event.preventDefault()
   // const data = store.day
   const data = getFormFields(event.target)
-  console.log('in events.js, onUpdateDay function ping, data is: ', data)
+  console.log(data)
   api.updateDay(data)
     .then(function () {
       onShowDays(event)
     },
-    ui.updateWordSuccess)
-    .catch(ui.updateWordFailure)
+    ui.updateDaySuccess)
+    .catch(ui.updateDayFailure)
 }
 
 // const onHideDays = function (event) {
@@ -115,15 +93,24 @@ const onUpdateDay = function (event) {
 // }
 
 // delete, take the id and then just delete it
+const onDeleteDay = function (event) {
+  event.preventDefault()
+  // get user input
+  const data = getFormFields(event.target)
+  console.log(data)
+  api.deleteDay(data)
+  // if the call is successful,
+    .then(ui.deleteDaySuccess)
+    // if not,
+    .catch(ui.deleteDayFailure)
+}
 
 const onNewDay = function (event) {
   // prevent the page from reloading after button gets clicked
   event.preventDefault()
-  // clear the game board
-  $('#message').text('')
   // get user input
   const data = getFormFields(event.target)
-  // call the newGame function in api.js
+  // call the newDay function in api.js
   api.newDay(data)
   // if the call is successful,
     .then(ui.newDaySuccess)
@@ -139,6 +126,7 @@ module.exports = {
   onNewDay,
   onShowDays,
   onFindDay,
-  onUpdateDay
+  onUpdateDay,
+  onDeleteDay
   // onHideDays
 }

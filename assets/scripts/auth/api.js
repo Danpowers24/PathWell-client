@@ -60,20 +60,6 @@ const newDay = function (data) {
   })
 }
 
-// I should export a lot of this stuff to store.js and then import it here
-const updateGame = function (data) {
-  // AJAX call
-  return $.ajax({
-    // I need to update the url with the correct url
-    url: config.apiUrl + '/games/' + store.game.id,
-    method: 'PATCH',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
-}
-
 // this will be show all entries/history
 const showDays = function (data) {
   console.log('in api.js: showDays function has been called')
@@ -87,11 +73,23 @@ const showDays = function (data) {
   })
 }
 
-const findDay = function (data) {
-  console.log('in api.js: findDay function has been called, this is the data that it is getting passed: ', data)
+const findDay = function (userInput) {
+  console.log(userInput)
+  return $.ajax({
+    url: config.apiUrl + '/days/' + userInput.day.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: userInput
+  })
+}
+
+const deleteDay = function (data) {
+  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/days/' + data.day.id,
-    method: 'GET',
+    method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
@@ -117,9 +115,9 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
-  updateGame,
   newDay,
   showDays,
   findDay,
-  updateDay
+  updateDay,
+  deleteDay
 }

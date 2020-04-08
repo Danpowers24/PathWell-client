@@ -20,5 +20,6 @@ $(() => {
   // $('.content').on('submit', '#hide-days', authEvents.onHideDays)
   // $('.content').on('submit', '.show-all', authEvents.onShowDays)
   $('#find-day').on('submit', authEvents.onFindDay)
+  $('#delete-day').on('submit', authEvents.onDeleteDay)
   $('.content').on('submit', '.update-day', authEvents.onUpdateDay)
 })
