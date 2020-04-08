@@ -3,7 +3,7 @@
 let apiUrl
 const apiUrls = {
   // I will update this once my site is deployed on both ends
-  production: '<replace-with-herokuURL>',
+  production: 'https://apple-sundae-62931.herokuapp.com',
   development: 'http://localhost:4741'
 }
 
