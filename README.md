@@ -3,6 +3,8 @@
 
 ## You can **view PathWell** here: https://danpowers24.github.io/PathWell-client #
 
+### And my back-end repo, here: https://github.com/Danpowers24/rails-api-project-2 #
+
 Thank you for checking out PathWell! I built this program for a project in my Software Engineering Immersive course at General Assembly.
 
 ### Remember the last time you went to the doctor for a chronic pain issue? ###
@@ -36,13 +38,13 @@ As a user, I would like to log my pain for the day.\
 As a user looking to document in more detail, I would like to add a note for each entry.\
 As a user, I would like to see all of my logged days.
 
-### You can see my **wireframe** here: https://imgur.com/Cj9IjuX #
+### You can see my **wireframe and ERD** here: https://i.imgur.com/VFJzanK.jpg #
 
 ### Organization tools and **problem solving process**: #
 
 I used Trello to get all my thoughts organized and features planned out. I wanted to plan it all out and give myself instructions for each step. I utilized pseudocode to help convert my plain english/instructions into actual code. I like to collaborate so I worked with classmates through some basic/technical/setup steps.
 
-A good example of one challenge I overcame was when
+A good example of one challenge I overcame was when I realized I wasn't running my Rails server for the last two days of the project. I went all of Monday and Tuesday thinking that every single CRUD action was broken until Scott asked me if I was running my server Tuesday night before presentations. I ran the server and everything started working. For two days, I was troubleshooting 404 issues that weren't issues. I felt like I had no time to go back to the basics and learn anything new. I just kept coding and hoping that I was going to get it right. I never even took the time to end my server sessions and power down my laptop for the night - it stayed on running both servers (and later on, only one server) for almost a week straight. I never took the time to take a step back, take a breath, and realize how far I actually got.
 
 ### List of **unsolved problems** to be fixed and **other user stories** to be addressed in future iterations: #
 
