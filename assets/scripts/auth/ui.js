@@ -15,6 +15,9 @@ $(function () {
   $('#delete-day').addClass('hidden')
 })
 
+// resetting a form
+// $('sign-up').trigger('reset')
+
 const signUpSuccess = function (data) {
   $('#message').text('You have successfully signed up!')
   $('#message').removeClass()
