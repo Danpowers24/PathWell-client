@@ -11,7 +11,7 @@ Now imagine the doctor having all the information about your pain issue before y
 
 ### How it works ###
 
-PathWell is a simple way for people with chronic pain to document their
+PathWell is a simple way for people with chronic pain to document their pain. Users sign up, log in, and document their pain by the day. Users can add notes to their entries to attach meaningful qualitative data to their easy to measure, quantitative, daily pain level.
 
 ## You can **view PathWell** here: https://danpowers24.github.io/PathWell-client #
 
@@ -21,6 +21,7 @@ HTML\
 CSS\
 AJAX\
 jQuery\
+Handlebars\
 Git\
 GitHub\
 GitHub Enterprise\
@@ -50,3 +51,10 @@ As an elderly person with Alzheimer’s, I forget exactly how bad my chronic pai
 As an athlete with a nagging/chronic injury, I want to track my pain for each practice to analyze the data with my trainer.\
 As a person with chronic pain, I want to see how much it actually hurts each day.\
 As a patient with chronic pain, I want to be able to track each day and how much pain I have so that I can better inform my doctor about my symptoms.
+
+In future iterations, I want to:\
+- add a background image\
+- format the 'History' entries into a table\
+- add Bootstrap formatting to the website layout and buttons\
+- add modals\
+- add a nav bar
