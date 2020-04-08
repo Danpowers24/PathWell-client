@@ -1,6 +1,8 @@
 
 # Welcome! #
 
+## You can **view PathWell** here: https://danpowers24.github.io/PathWell-client #
+
 Thank you for checking out PathWell! I built this program for a project in my Software Engineering Immersive course at General Assembly.
 
 ### Remember the last time you went to the doctor for a chronic pain issue? ###
@@ -12,8 +14,6 @@ Now imagine the doctor having all the information about your pain issue before y
 ### How it works ###
 
 PathWell is a simple way for people with chronic pain to document their pain. Users sign up, log in, and document their pain by the day. Users can add notes to their entries to attach meaningful qualitative data to their easy to measure, quantitative, daily pain level.
-
-## You can **view PathWell** here: https://danpowers24.github.io/PathWell-client #
 
 ### **List of technologies** I used to create this application:
 JavaScript\
