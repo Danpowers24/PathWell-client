@@ -1,9 +1,9 @@
 
 # Welcome! #
 
-## You can **view PathWell** here: https://danpowers24.github.io/PathWell-client #
+## You can **view PathWell** [here.](https://danpowers24.github.io/PathWell-client) #
 
-### And my back-end repo, here: https://github.com/Danpowers24/rails-api-project-2 #
+### And my back-end repo, [here.](https://github.com/Danpowers24/rails-api-project-2) #
 
 Thank you for checking out PathWell! I built this program for a project in my Software Engineering Immersive course at General Assembly.
 
