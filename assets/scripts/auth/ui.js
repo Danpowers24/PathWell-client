@@ -100,6 +100,9 @@ const signOutSuccess = function (data) {
   $('#new-day').addClass('hidden')
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
+  $('.content').addClass('hidden')
+  $('#find-day').addClass('hidden')
+  $('#delete-day').addClass('hidden')
 }
 
 const signOutFailure = function (error) {
