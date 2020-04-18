@@ -1,7 +1,7 @@
 
 # Welcome! #
 
-### You can **view PathWell** [here.](https://danpowers24.github.io/PathWell-client) and the back-end repo, [here.](https://github.com/Danpowers24/rails-api-project-2) #
+### You can **view PathWell** [here,](https://danpowers24.github.io/PathWell-client) and the back-end repo, [here.](https://github.com/Danpowers24/rails-api-project-2) #
 
 Thank you for checking out PathWell! I built this program for a project in my Software Engineering Immersive course at General Assembly.
 
@@ -44,7 +44,7 @@ I used Trello to get all my thoughts organized and features planned out. I wante
 
 A good example of one challenge I overcame was when I realized I wasn't running my Rails server for the last two days of the project. I went all of Monday and Tuesday thinking that every single CRUD action was broken until Scott asked me if I was running my server Tuesday night before presentations. I ran the server and everything started working. For two days, I was troubleshooting 404 issues that weren't issues. I felt like I had no time to go back to the basics and learn anything new. I just kept coding and hoping that I was going to get it right. I never even took the time to end my server sessions and power down my laptop for the night - it stayed on running both servers (and later on, only one server) for almost a week straight. I never took the time to take a step back, take a breath, and realize how far I actually got.
 
-### List of **unsolved problems** to be fixed and **other user stories** to be addressed in future iterations: #
+## User stories to be addressed in future iterations: #
 
 As a patient with a diagnosed chronic pain issue in quarantine, I want to be able to supply my doctor with information without having to physically see them.\
 As an elderly person with Alzheimer’s, I forget exactly how bad my chronic pain issue is.\
@@ -52,9 +52,10 @@ As an athlete with a nagging/chronic injury, I want to track my pain for each pr
 As a person with chronic pain, I want to see how much it actually hurts each day.\
 As a patient with chronic pain, I want to be able to track each day and how much pain I have so that I can better inform my doctor about my symptoms.
 
-In future iterations, I want to:\
-- add a background image\
-- format the 'History' entries into a table\
-- add Bootstrap formatting to the website layout and buttons\
-- add modals\
+## Features to be added in future iterations: #
+
+- add a background image
+- format the 'History' entries into a table
+- add Bootstrap formatting to the website layout and buttons
+- add modals
 - add a nav bar
