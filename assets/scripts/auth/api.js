@@ -49,7 +49,7 @@ const changePassword = function (data) {
 
 // I want this to populate the screen with form fields to fill out date, pain_level, and
 const newDay = function (data) {
-  console.log('In api.js: newDay function has been called and ran')
+  // console.log('In api.js: newDay function has been called and ran')
   return $.ajax({
     url: config.apiUrl + '/days',
     method: 'POST',
@@ -62,7 +62,7 @@ const newDay = function (data) {
 
 // this will be show all entries/history
 const showDays = function (data) {
-  console.log('in api.js: showDays function has been called')
+  // console.log('in api.js: showDays function has been called')
   return $.ajax({
     url: config.apiUrl + '/days',
     method: 'GET',
@@ -74,7 +74,7 @@ const showDays = function (data) {
 }
 
 const findDay = function (userInput) {
-  console.log(userInput)
+  // console.log(userInput)
   return $.ajax({
     url: config.apiUrl + '/days/' + userInput.day.id,
     method: 'GET',
@@ -86,7 +86,7 @@ const findDay = function (userInput) {
 }
 
 const deleteDay = function (data) {
-  console.log(data)
+  // console.log(data)
   return $.ajax({
     url: config.apiUrl + '/days/' + data.day.id,
     method: 'DELETE',
@@ -99,7 +99,7 @@ const deleteDay = function (data) {
 
 const updateDay = function (data) {
   // those two lines
-  console.log('in api.js: updateDay function has been called, this is the data that it is getting passed: ', data)
+  // console.log('in api.js: updateDay function has been called, this is the data that it is getting passed: ', data)
   return $.ajax({
     url: config.apiUrl + '/days/' + data.day.id,
     method: 'PATCH',
