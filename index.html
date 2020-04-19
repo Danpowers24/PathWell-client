@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>PathWell</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1><span class="logo-1">Path</span><span class="logo-2">Well</span></h1>
+
+    <div class="hero-image"></div>
+
+      <form id="sign-in" class="border">
+        <fieldset>
+          <legend>Sign in</legend>
+            <input type="text" name="credentials[email]" placeholder="your@email.com">
+            <input type="password" name="credentials[password]" placeholder="Type Password Here">
+            <input type="submit" value="Sign in">
+        </fieldset>
+      </form>
+
+      <form id="sign-up" class="border">
+        <fieldset>
+          <legend>Sign up</legend>
+            <input type="text" name="credentials[email]" placeholder="your@email.com">
+            <input type="password" name="credentials[password]" placeholder="Type Password Here">
+            <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+            <input type="submit" value="Sign up">
+        </fieldset>
+      </form>
+
+      <form id="sign-out" class="border">
+        <fieldset>
+          <legend></legend>
+            <input type="submit" value="sign out">
+        </fieldset>
+      </form>
+
+      <form id="change-password" class="border">
+        <fieldset>
+          <legend>Change password</legend>
+            <input type="password" name="passwords[old]" placeholder="old password">
+            <input type="password" name="passwords[new]" placeholder="new password">
+            <input type="submit" value="change password">
+        </fieldset>
+      </form>
+
+    <p id="message"></p>
+
+      <form id="new-day" class="border">
+        <fieldset>
+          <legend class="new-entry-heading">Make a new entry here:</legend>
+            <input type="text" name="day[date]" placeholder="Date">
+            <input type="integer" name="day[pain_level]" placeholder="Pain on scale of 1-10">
+            <input type="text" name="day[notes]" placeholder="Notes:">
+            <input type="submit" value="Submit New Entry">
+        </fieldset>
+      </form>
+
+      <form id="find-day" class="border">
+        <fieldset>
+          <legend>Find an Entry</legend>
+          <input type="integer" name="day[id]" placeholder="Entry ID">
+            <input type="submit" value="Find Entry">
+        </fieldset>
+      </form>
+
+      <p id="find-message"></p>
+
+<!-- make an update by id button then some form fields to update it -->
+
+<!-- make a find by id for delete as well -->
+
+      <form id="delete-day" class-"border">
+        <fieldset>
+          <legend>Find an Entry to Delete</legend>
+          <input type="integer" name="day[id]" placeholder="Entry ID">
+            <input type="submit" value="Delete Entry">
+        </fieldset>
+      </form>
+
+      <form id="show-days" class="border">
+        <fieldset>
+          <legend>History</legend>
+            <input type="submit" value="Show History">
+        </fieldset>
+      </form>
+
+      <!-- <form id="hide-days" class="border">
+        <fieldset>
+            <input type="submit" value="Hide History">
+        </fieldset>
+      </form> -->
+
+      <p id="history-message"></p>
+
+      <table>
+          <tbody id="tbody"></tbody>
+      </table>
+
+<!-- This is where all the entries show up when you click "show history" button -->
+      <div class="content"></div>
+
+      <table>
+          <tbody id="find-tbody"></tbody>
+      </table>
+
+    </body>
+</html>
