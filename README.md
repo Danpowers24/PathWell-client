@@ -1,7 +1,7 @@
 
 # Welcome! #
 
-### You can **view PathWell** [here,](https://danpowers24.github.io/PathWell-client) and the back-end repo, [here.](https://github.com/Danpowers24/rails-api-project-2) #
+### Click [here](https://danpowers24.github.io/PathWell-client) to start using PathWell! #
 
 Thank you for checking out PathWell! I built this program for a project in my Software Engineering Immersive course at General Assembly.
 
@@ -59,3 +59,9 @@ As a patient with chronic pain, I want to be able to track each day and how much
 - add Bootstrap formatting to the website layout and buttons
 - add modals
 - add a nav bar
+
+## Additional resources: #
+
+[Deployed API](https://apple-sundae-62931.herokuapp.com)
+
+[Back-End Repo](https://github.com/Danpowers24/rails-api-project-2)
