@@ -32,7 +32,7 @@ const signUpFailure = function (error) {
   $('#message').text('Something went wrong when signing up, please try again.')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.log('signUpFailure error is: ', error)
+  // console.log('signUpFailure error is: ', error)
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
 }
@@ -61,7 +61,7 @@ const signInFailure = function (error) {
   $('#message').text('Hm, we had trouble finding that email/password combo. Please try again.')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.log('signInFailure error is: ', error)
+  // console.log('signInFailure error is: ', error)
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
 }
@@ -80,7 +80,7 @@ const changePasswordFailure = function (error) {
   $('#message').text('Failed to change password, try again.')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.log('changePasswordFailure error is: ', error)
+  // console.log('changePasswordFailure error is: ', error)
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
 }
@@ -103,20 +103,21 @@ const signOutSuccess = function (data) {
   $('.content').addClass('hidden')
   $('#find-day').addClass('hidden')
   $('#delete-day').addClass('hidden')
+  $('#find-message').addClass('hidden')
 }
 
 const signOutFailure = function (error) {
   $('#message').text('You are not signed out yet! Something went wrong.')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.log('signOutFailure data is: ', error)
+  // console.log('signOutFailure data is: ', error)
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
 }
 
 const newDaySuccess = function (data) {
   $('#message').text('Thanks for your entry! You are on your way to feeling better.')
-  console.log('newDaySuccess was called and ran')
+  // console.log('newDaySuccess was called and ran')
   $('form input[type="text"]').val('')
   $('form input[type="integer"]').val('')
   // console.log(api.newDay.data)
@@ -125,7 +126,7 @@ const newDaySuccess = function (data) {
 
 const newDayFailure = function (error) {
   $('#message').text('There was an error creating a new entry, sorry! Please try again.')
-  console.log('newDayFailure was called and ran, this is the error: ', error)
+  // console.log('newDayFailure was called and ran, this is the error: ', error)
 }
 
 // const hideDaySuccess = function () {
@@ -138,7 +139,7 @@ const showDaysSuccess = function (data) {
   // Clear the table before starting new one
   $('#tbody > tr').remove()
   // test that this fucntion has been run
-  console.log('in ui.js: showDaysSuccess has been called and ran')
+  // console.log('in ui.js: showDaysSuccess has been called and ran')
   // console.log('data is ', store.days)
   // figure out how to display every day object (entry)
   // $('#history-message').text('you have made ' + store.days.length + ' entries.')
@@ -153,12 +154,12 @@ const showDaysSuccess = function (data) {
 // need edit and delete functions. They should be happening in events.js
 
 const deleteDaySuccess = function () {
-  console.log('deleteDaySuccess ping')
+  // console.log('deleteDaySuccess ping')
   $('message').text('Kiss that entry goodbye!')
 }
 
 const deleteDayFailure = function () {
-  console.log('deleteDaySuccess ping')
+  // console.log('deleteDaySuccess ping')
   $('message').text('oops! We were unable to delete that entry. Try again.')
 }
 
@@ -172,23 +173,23 @@ const showDaysFailure = function (error) {
   $('#message').text('Something went wrong when trying to see your history')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.log('showDaysFailure data is: ', error)
+  // console.log('showDaysFailure data is: ', error)
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
 }
 
 // pass something in to this?
 const findDaySuccess = function (returnData) {
-  console.log('findDaySuccess has been called ')
+  // console.log('findDaySuccess has been called ')
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
-  console.log('in findDaySuccess, returnData is: ')
-  console.log('On ' + returnData.day.date + ', you had a pain level of ' + returnData.day.pain_level + ' and you wrote the following note: ' + returnData.day.notes)
+  // console.log('in findDaySuccess, returnData is: ')
+  // console.log('On ' + returnData.day.date + ', you had a pain level of ' + returnData.day.pain_level + ' and you wrote the following note: ' + returnData.day.notes)
   $('#find-message').text('On ' + returnData.day.date + ', you had a pain level of ' + returnData.day.pain_level + ' and you wrote the following note: ' + returnData.day.notes)
 }
 
 const findDayFailure = function () {
-  console.log('findDayFailure has been called')
+  // console.log('findDayFailure has been called')
   $('#message').text('Something went wrong when trying to find that entry.')
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
