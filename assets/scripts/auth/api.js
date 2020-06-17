@@ -51,7 +51,7 @@ const changePassword = function (data) {
 const newDay = function (data) {
   // console.log('In api.js: newDay function has been called and ran')
   return $.ajax({
-    url: config.apiUrl + '/days',
+    url: config.apiUrl + '/entries',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token

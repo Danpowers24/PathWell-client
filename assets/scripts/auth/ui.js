@@ -7,12 +7,12 @@ $(function () {
   $('#sign-out').addClass('hidden')
   $('#change-password').addClass('hidden')
   $('.game-board-container').addClass('hidden')
-  $('#new-day').addClass('hidden')
+  // $('#new-day').addClass('hidden')
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
-  $('#show-days').addClass('hidden')
-  $('#find-day').addClass('hidden')
-  $('#delete-day').addClass('hidden')
+  // $('#show-days').addClass('hidden')
+  // $('#find-day').addClass('hidden')
+  // $('#delete-day').addClass('hidden')
 })
 
 // resetting a form
