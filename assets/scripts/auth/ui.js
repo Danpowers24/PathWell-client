@@ -180,12 +180,12 @@ const showDaysFailure = function (error) {
 
 // pass something in to this?
 const findDaySuccess = function (returnData) {
-  // console.log('findDaySuccess has been called ')
+  console.log('findDaySuccess return data is ', returnData)
   $('form input[type="text"]').val('')
   $('form input[type="password"]').val('')
   // console.log('in findDaySuccess, returnData is: ')
   // console.log('On ' + returnData.day.date + ', you had a pain level of ' + returnData.day.pain_level + ' and you wrote the following note: ' + returnData.day.notes)
-  $('#find-message').text('On ' + returnData.day.date + ', you had a pain level of ' + returnData.day.pain_level + ' and you wrote the following note: ' + returnData.day.notes)
+  $('#find-message').text('On ' + returnData[0].day.date + ', you had a pain level of ' + returnData[0].day.pain_level + ' and you wrote the following note: ' + returnData[0].day.notes)
 }
 
 const findDayFailure = function () {

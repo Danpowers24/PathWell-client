@@ -49,9 +49,9 @@ const changePassword = function (data) {
 
 // I want this to populate the screen with form fields to fill out date, pain_level, and
 const newDay = function (data) {
-  // console.log('In api.js: newDay function has been called and ran')
+  console.log('In api.js data is ', data)
   return $.ajax({
-    url: config.apiUrl + '/entries',
+    url: config.apiUrl + '/entries/' + data.day.date,
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -74,9 +74,9 @@ const showDays = function (data) {
 }
 
 const findDay = function (userInput) {
-  // console.log(userInput)
+  console.log(userInput)
   return $.ajax({
-    url: config.apiUrl + '/days/' + userInput.day.id,
+    url: config.apiUrl + '/entries/' + userInput.day.id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
