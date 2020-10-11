@@ -62,15 +62,15 @@ const newDay = function (data) {
 
 // this will be show all entries/history
 const showDays = function (data) {
-  // console.log('in api.js: showDays function has been called')
-  return $.ajax({
-    url: config.apiUrl + '/days',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
+  // return $.ajax({
+  //   url: config.apiUrl + '/days',
+  //   method: 'GET',
+  //   headers: {
+  //     Authorization: 'Token token=' + store.user.token
+  //   },
+  //   data
+  // })
+  console.log('in api.js: showDays function has been called, data is ', data)
 }
 
 const findDay = function (userInput) {

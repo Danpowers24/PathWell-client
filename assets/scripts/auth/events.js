@@ -67,7 +67,7 @@ const onFindDay = function (event) {
   event.preventDefault()
   // console.log('In events.js: onFindDay function has been called and ran')
   const userInput = getFormFields(event.target)
-  // console.log('in events.js, this is the data: ', userInput)
+  console.log('in events.js, this is the data: ', userInput)
   api.findDay(userInput)
     .then(ui.findDaySuccess)
     .catch(ui.findDayFailure)
